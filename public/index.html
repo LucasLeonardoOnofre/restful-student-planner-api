@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Third Assignment</title>
+</head>
+<body>
+    
+  <h1>API Tasks</h1>
+
+  <p>This API allows users to manage tasks.</p>
+
+  <h2>Available Endpoints</h2>
+
+   <ul>
+        <li>GET /tasks - Get all tasks</li>
+        <li>GET /tasks/:id - Get task by ID</li>
+        <li>GET /tasks/status/filter?status=todo - Filter tasks by status</li>
+        <li>GET /tasks/search/title?title=Finish - Search tasks by title</li>
+        <li>POST /tasks - Create a task</li>
+        <li>PUT /tasks/:id - Update task</li>
+        <li>DELETE /tasks/:id - Delete task by ID</li>
+        <li>DELETE /tasks - Delete all tasks</li>
+    </ul>
+
+    <h2>Postman Test Cases</h2>
+     <h3>1. Search Test</h3>
+    <p><strong>Request:</strong> http://localhost:3000/tasks/15</p>
+    <p><strong>Result:</strong> {"success":true,"data":{"id":15,"title":"Search for scholarship deadline details","course":"GENED101","due_date":"2026-05-20T12:00:00.000Z","priority":"medium","status":"todo"}}</p>
+
+    <h3>2. Filter Test</h3>
+    <p><strong>Request:</strong> http://localhost:3000/tasks/status/filter?status=todo</p>
+    <p><strong>Result:</strong> Returned all tasks with status "todo"</p>
+
+    <h3>3. Error Test</h3>
+    <p><strong>Request:</strong> http://localhost:3000/tasks/9999</p>
+    <p><strong>Result:</strong>{"success":false,"message":"Task not found"}</p>
+
+</body>
+</html>
